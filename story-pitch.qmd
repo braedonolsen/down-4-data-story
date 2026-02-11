@@ -1,0 +1,35 @@
+---
+title: "Pitch: Fourth Downs in College Football"
+subtitle: |
+  | JOUR 377
+  | Winter Quarter, 2026
+author: "Braedon Olsen"
+pagetitle: "4th Down Story Pitch"
+date: today
+
+format:
+  html:
+    toc: true
+    toc-location: left
+    embed-resources: true
+    link-external-newwindow: true
+    code-fold: true
+
+execute:
+  warning: false
+
+from: markdown+emoji 
+reference-location: margin
+citation-location: margin 
+---
+
+
+pitch the story here
+
+
+
+
+
+
+
+
