@@ -23,8 +23,13 @@ reference-location: margin
 citation-location: margin 
 ---
 
+## Pitch
 
-pitch the story here
+Have you noticed teams going for it on fourth down more often? If so, your eyes are not deceiving you. With the rise in analytics used for in-game strategy and decision-making, college football teams are attempting fourth down conversions at unprecedented rates. Coaches who historically would have sent out the punt team on a 4th-and-2 are now scheming aggressive quarterback sneaks or trick plays to scrap for an extra set of downs. The numbers, whose hold on college football coaches is almost hypnotic, now dictate the strategy. For this story, I'd like to examine how the volume of fourth down conversion attempts in college football has shifted over the last 5-10 years. I would also aim to determine whether the success rate of these attempts has changed, and if so, what factors could be responsible.
+
+
+## Data
+
 
 
 
