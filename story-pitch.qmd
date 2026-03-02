@@ -63,6 +63,9 @@ After I downloaded the initial dataset, I was able to continue processing the da
 
 The next step was analysis. I first looked at fourth down attempt rates. I used the `summarize()` function to get the fourth down rates grouped by season. Then, I created my visualization by extending that code, adding points for each season and a line to connect them for easier interpretation. I did the same thing for fourth down attempt rates in short yardage situations--the only new step was to filter the data to only include plays where the distance needed was five yards or less. I used similar strategies for fourth down success rate. The big difference for those figures was that I also needed to filter the data to only include observations where the team actually went for it, as I did not want to inadvertently include plays where a team punted or kicked a field goal. Finally, I saved out all these plots for easy retrieval.
 
+To fact-check, I first reviewed all my code in R, line-by-line, making sure everything made sense and appeared correct. I then opened a blank R script, redownloaded my initial dataset, and attempted to replicate my original conclusions without looking at my original R scripts. When I was able to do this without issues, I felt more satisfied that my facts were indeed correct. However, just to make sure, I shared my work with a classmate and asked him to review my code for any errors. He told me that my work made sense to him and appeared to be reproducible, so I feel confident in my accuracy. For my non-data-driven facts, specifically the ones I obtained from Michael McRoberts, I reviewed my notes and my recording of the Zoom call I had with him, ensuring each quote and fact was accurate. After double-checking everything, I felt confident in my entire story.
+
+
 
 ## Flags
 
