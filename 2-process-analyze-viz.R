@@ -83,7 +83,7 @@ fourth_down |>
   ) # nearly 7% increase over last 10 years
 
 # now let's visualize the above code:
-fourth_down |> 
+attempt_rate_reg <- fourth_down |> 
   summarize(
     down_4_attempt_rate = mean(go_for_it),
     .by = season
@@ -98,12 +98,13 @@ fourth_down |>
     title = "College football is seeing a spike in fourth down conversion attempts",
     subtitle = "Attempt rates have increased from 19.8% to 26.4% over the last 10 seasons",
     x = "Year",
-    y = "Fourth down attempt rate"
+    y = "Fourth down attempt rate",
+    caption = "Source: CollegeFootballData.com.\nGraphic by Braedon Olsen."
   )
 
 
 # look at fourth and short (<5 yards to go) specifically:
-fourth_down |> 
+attempt_rate_short <- fourth_down |> 
   filter(distance <= 5) |> 
   summarize(
     down_4_attempt_rate = mean(go_for_it),
@@ -119,7 +120,8 @@ fourth_down |>
     title = "4th-and-short attempts have seen an even higher spike",
     subtitle = "Attempt rates with 5 or fewer yards to go have increased from 34.7% to 46.3%",
     x = "Year",
-    y = "Fourth down attempt rate"
+    y = "Fourth down attempt rate",
+    caption = "Source: CollegeFootballData.com.\nGraphic by Braedon Olsen."
   )
 
 
@@ -133,7 +135,7 @@ fourth_down |>
 # success rate has remained largely steady
 
 # visualize the above code:
-fourth_down |> 
+success_rate_reg <- fourth_down |> 
   filter(go_for_it == 1) |> 
   summarize(success_rate = mean(success),
             .by = season) |> 
@@ -148,38 +150,13 @@ fourth_down |>
     title = "4th down success rates have remained steady",
     subtitle = "Teams convert on fourth down attempts just over 50% of the time",
     x = "Year",
-    y = "Fourth down success rate"
-  )
-
-# now look at 4th and short success rates:
-fourth_down |> 
-  filter(go_for_it == 1) |> 
-  summarize(success_rate = mean(success),
-            .by = season)
-# success rate has remained largely steady
-
-# visualize the above code:
-fourth_down |> 
-  filter(go_for_it == 1) |> 
-  summarize(success_rate = mean(success),
-            .by = season) |> 
-  ggplot(aes(season, success_rate)) +
-  geom_point(size = 2, color = "red") +
-  geom_line() +
-  scale_x_continuous(breaks = unique(fourth_down$season)) +
-  scale_y_continuous(labels = scales::percent,
-                     limits = c(0.45, 0.65)) +
-  theme_minimal() +
-  labs(
-    title = "4th down success rates have remained steady",
-    subtitle = "Teams convert on fourth down attempts just over 50% of the time",
-    x = "Year",
-    y = "Fourth down success rate"
+    y = "Fourth down success rate",
+    caption = "Source: CollegeFootballData.com.\nGraphic by Braedon Olsen."
   )
 
 
 # now look at 4th and short:
-fourth_down |> 
+success_rate_short <- fourth_down |> 
   filter(go_for_it == 1 & distance <= 5) |> 
   summarize(success_rate = mean(success),
             .by = season) |> 
@@ -194,10 +171,16 @@ fourth_down |>
     title = "4th-and-short success rates have remained steady",
     subtitle = "Teams convert on 4th-and-short attempts around 60% of the time",
     x = "Year",
-    y = "Fourth down success rate"
+    y = "Fourth down success rate",
+    caption = "Source: CollegeFootballData.com.\nGraphic by Braedon Olsen."
   )
 
-  
+
+## save out plots
+ggsave(filename = "plots/attempt_rate_reg.png", plot = attempt_rate_reg)
+ggsave(filename = "plots/attempt_rate_short.png", plot = attempt_rate_short)
+ggsave(filename = "plots/success_rate_reg.png", plot = success_rate_reg)
+ggsave(filename = "plots/success_rate_short.png", plot = success_rate_short)
 
 
 
